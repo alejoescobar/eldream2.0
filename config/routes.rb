@@ -1,4 +1,10 @@
 Eldream20::Application.routes.draw do
+  resources :ideas
+
+
+  resources :lists
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
