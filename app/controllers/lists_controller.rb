@@ -10,4 +10,12 @@ class ListsController < ApplicationController
 				format.js
 			end
 		end		
+
+		def create
+			@list = List.create(params[:list])
+
+			respond_to do |format|
+				format.js
+			end	
+    end
 end

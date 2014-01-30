@@ -1,0 +1,6 @@
+<%= form_for @list, remote: true do |f| %>
+  <div class="field">	
+		<%= f.label :name %><br />
+		<%= f.text_field :name %>
+		<%= f.submit %>
+<% end %>
