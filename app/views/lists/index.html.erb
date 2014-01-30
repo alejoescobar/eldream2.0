@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <h1>Listas</h1>
+    <%=link_to "Nueva Lista", new_list_path, id: 'new-list', remote: true %>
+    <table id="lists" class="table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+        </tr>
+      <thead>
+      <tbody>
+        <% @lists.each do |list| %>
+        <tr>
+          <td><%= link_to list.name, list, remote: true %></td>
+        <tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>    
