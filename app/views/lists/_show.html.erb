@@ -1,0 +1,25 @@
+<div class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismisss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title"><%= @list.name %> - Ideas</h4>
+			</div>
+			<div class="modal-body">
+				<%= link_to "Nueva idea", new_idea_path(list_id: @list), id: 'new-idea', remote: true %>
+				<table id="ideas" class="table">
+					<tbody>
+						<% @list.ideas.each do |idea| %>
+						<tr>
+							<td><%= idea.name %> </td>
+						</tr>
+						<% end %>
+					</tbody>
+				</table>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>					

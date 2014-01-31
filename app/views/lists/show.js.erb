@@ -1,1 +1,3 @@
-$('<%= j render("show") %>').modal('show');
+$('<%= j render("show") %>').modal('show').on('hidden' , function (){
+	$(this).remove();
+});

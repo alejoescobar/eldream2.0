@@ -5,6 +5,7 @@ class ListsController < ApplicationController
 
 		def new
 			@list = List.new
+			@idea = Idea.new
 
 			respond_to do |format|
 				format.js
@@ -16,6 +17,14 @@ class ListsController < ApplicationController
 
 			respond_to do |format|
 				format.js
-			end	
+			end
+		end	
+			
+		def show
+		  @list = List.find(params[:id])
+
+		  respond_to do |format|
+		  	format.js
+		  end			
     end
 end
