@@ -1,9 +1,11 @@
 Eldream20::Application.routes.draw do
-  resources :ideas
+  get "pages/home"
 
+  resources :ideas
 
   resources :lists
 
+  root to: "pages#home"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
