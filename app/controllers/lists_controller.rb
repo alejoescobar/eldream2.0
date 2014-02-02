@@ -1,6 +1,8 @@
 class ListsController < ApplicationController
+before_filter :authenticate_user!
+
 	def index
-		@lists = List.all
+		@lists = List.where(:user_id => current_user.id)
 		
 	end	
 
@@ -14,6 +16,7 @@ class ListsController < ApplicationController
 
 		def create
 			@list = List.create(params[:list])
+			@list.user = current_user
 
 			respond_to do |format|
 				format.js
@@ -27,4 +30,9 @@ class ListsController < ApplicationController
 		  	format.js
 		  end			
     end
+
+    private
+    def require_authentication
+
+    end	
 end

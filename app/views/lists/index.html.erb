@@ -10,9 +10,7 @@
       <thead>
       <tbody>
         <% @lists.each do |list| %>
-        <tr>
-          <td><%= link_to list.name, list, remote: true %></td>
-        <tr>
+        <%= render list %>
         <% end %>
       </tbody>
     </table>
