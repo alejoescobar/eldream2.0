@@ -9,9 +9,9 @@
 				<%= link_to "Nueva idea", new_idea_path(list_id: @list), id: 'new-idea', remote: true %>
 				<table id="ideas" class="table">
 					<tbody>
-						<% @list.ideas.each do |idea| %>
+						<% @list.ideas.each_with_index.map do |idea, index| %>
 						<tr>
-							<td><%= idea.name %> </td>
+							<td><%= index += 1 %>. <%= idea.name %> </td>
 						</tr>
 						<% end %>
 					</tbody>

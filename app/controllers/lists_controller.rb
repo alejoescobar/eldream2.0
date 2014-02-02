@@ -1,11 +1,11 @@
 class ListsController < ApplicationController
 	def index
 		@lists = List.all
+		
 	end	
 
 		def new
 			@list = List.new
-			@idea = Idea.new
 
 			respond_to do |format|
 				format.js
