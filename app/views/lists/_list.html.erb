@@ -1,3 +1,4 @@
-<tr>
+<tr id="list_<%= list.id %>">
 	<td><%= link_to list.name, list, remote: true %></td>
+	<td><%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %></td>
 </tr>

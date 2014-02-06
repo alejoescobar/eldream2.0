@@ -6,29 +6,38 @@ before_filter :authenticate_user!
 		
 	end	
 
-		def new
-			@list = List.new
+	def new
+		@list = List.new
 
-			respond_to do |format|
-				format.js
-			end
-		end		
+		respond_to do |format|
+			format.js
+		end
+	end		
 
-		def create
-			@list = List.create(params[:list])
-			@list.user = current_user
+	def create
+		@list = List.create(params[:list])
+		@list.user = current_user
 
-			respond_to do |format|
-				format.js
-			end
-		end	
+		respond_to do |format|
+			format.js
+		end
+	end	
 			
-		def show
-		  @list = List.find(params[:id])
+	def show
+		@list = List.find(params[:id])
 
-		  respond_to do |format|
+	    respond_to do |format|
 		  	format.js
-		  end			
+	    end			
+    end
+
+    def destroy
+    	@list = List.find(params[:id])
+    	@list.destroy
+
+    	respond_to do |format|
+    		format.js
+    	end
     end
 
     private
