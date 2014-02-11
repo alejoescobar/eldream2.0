@@ -1,0 +1,4 @@
+$('#list_<%= @list.id %> .name').html('<%= j render("form") %>');
+$('form').on('submit', function() {
+	$(this).remove();
+});
