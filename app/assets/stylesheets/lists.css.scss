@@ -33,3 +33,11 @@
 .icon-close:before {
 	content: "\e601";
 }
+
+tr td.action a {
+	display: none;
+}
+
+tr:hover td.action a {
+	display: inline;
+}
